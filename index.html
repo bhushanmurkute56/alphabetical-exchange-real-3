@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alphabet Exchange</title>
+    <style>
+        #input {
+            height: 100px;
+            width: 800px;
+            border: 3px solid black;
+            margin: 20px auto;
+            position: relative;
+            left: 400px;
+            background-color: #ffcc00;
+            text-wrap: wrap;
+        }
+
+        #output {
+            height: 100px;
+            width: 800px;
+            border: 3px solid black;
+            margin: 20px auto;
+            position: relative;
+            left: 400px;
+            background-color: #ffcc00;
+            text-wrap: wrap;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-around;
+            width: 600px;
+            margin: 20px auto;
+            position: relative;
+            left: 70px;
+            text-wrap: wrap;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .button1 {
+            padding: 15px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            background-color: #faae2b;
+            color: #00473e;
+            border: none;
+        }
+
+        .button2 {
+            padding: 15px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            background-color: #faae2b;
+            color: #00473e;
+            border: none;
+        }
+
+        .button3 {
+            padding: 15px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            background-color: #faae2b;
+            color: #00473e;
+            border: none;
+        }
+
+        .button4 {
+            padding: 15px 25px;
+            border-radius: 20px;
+            cursor: pointer;
+            background-color: #faae2b;
+            color: #00473e;
+            border: none;
+        }
+
+
+        .img-position {
+            position: relative;
+            top: 13px;
+        }
+
+        @media screen and (max-width : 500px) {
+            .btn-container {
+                justify-content: center;
+            }
+
+            .text-center {
+                text-align: center;
+            }
+
+            #input {
+                height: 100px;
+                width: 800px;
+                border: 3px solid black;
+                margin: 20px auto;
+                position: relative;
+                left: 0px;
+                background-color: #ffcc00;
+                text-wrap: wrap;
+            }
+
+            #output {
+                height: 100px;
+                width: 800px;
+                border: 3px solid black;
+                margin: 20px auto;
+                position: relative;
+                left: 0px;
+                background-color: #ffcc00;
+                text-wrap: wrap;
+            }
+        }
+
+        @media screen and (min-width : 500px) and (max-width : 768px) {
+
+            .btn-container {
+                justify-content: space-around;
+            }
+
+            .text-center {
+                text-align: center;
+            }
+
+            #input {
+                height: 100px;
+                width: 800px;
+                border: 3px solid black;
+                margin: 20px auto;
+                position: relative;
+                left: 0px;
+                background-color: #ffcc00;
+                text-wrap: wrap;
+            }
+
+            #output {
+                height: 100px;
+                width: 800px;
+                border: 3px solid black;
+                margin: 20px auto;
+                position: relative;
+                left: 0px;
+                background-color: #ffcc00;
+                text-wrap: wrap;
+            }
+        }
+
+        @media screen and (min-width : 768px) {
+
+            .btn-container {
+                justify-content: space-around;
+            }
+
+            .text-center {
+                text-align: center;
+            }
+
+            #input {
+                height: 100px;
+                width: 800px;
+                border: 3px solid black;
+                margin: 20px auto;
+                position: relative;
+                left: 400px;
+                background-color: #ffcc00;
+                text-wrap: wrap;
+            }
+
+            #output {
+                height: 100px;
+                width: 800px;
+                border: 3px solid black;
+                margin: 20px auto;
+                position: relative;
+                left: 400px;
+                background-color: #ffcc00;
+                text-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+
+<body class="body">
+    <h1 class="text-center header">Text Operation
+        <img src="text operation.jpg" alt="text-operation-image" height="50px" width="50px" class="img-position">
+    </h1>
+
+    <input type="text" placeholder="Enter Input" id="input" class="text-center">
+    <input type="text" placeholder="Output : " id="output" class="text-center">
+
+    <div class="btn-container">
+        <button type="button" class="button1" onclick="handleOperation('upperCase')">Upper Case</button>
+        <button type="button" class="button2" onclick="handleOperation('lowerCase')">Lower Case</button>
+        <button type="button" class="button3" onclick="handleOperation('wordCount')">Word Count</button>
+        <button type="button" class="button4" onclick="handleOperation('charCount')">Character Count</button>
+    </div>
+
+    <script>
+        function handleOperation(ops) {
+            const inputElement = document.getElementById('input')
+            const outputElement = document.getElementById('output')
+
+            switch (ops) {
+                case 'upperCase': {
+                    outputElement.value = inputElement.value.toUpperCase();
+                    break;
+                }
+                case 'lowerCase': {
+                    outputElement.value = inputElement.value.toLowerCase();
+                    break;
+                }
+                case 'wordCount': {
+                    outputElement.value = `Word Count : ${inputElement.value.split(" ").length}`;
+                    break;
+                }
+                case 'charCount': {
+                    outputElement.value = `Character Count : ${inputElement.value.length}`;
+                    break;
+                }
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
